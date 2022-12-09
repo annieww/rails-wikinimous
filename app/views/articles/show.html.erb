@@ -1,0 +1,21 @@
+<div class="container mt-5 mb-5">
+  <h2>
+    <%= @article.title %>
+  </h2>
+  <p>
+    <%= @article.content%>
+  </p>
+  <%= link_to "Home",
+    root_path,
+    class: "btn btn-primary me-2 mt-5"
+  %>
+  <%= link_to "Edit",
+    edit_article_path(@article),
+    class: "btn btn-secondary me-2 mt-5"
+  %>
+  <%= link_to "Delete",
+    article_path(@article),
+    class: "btn btn-warning mt-5",
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+</div>
